@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
 @font-face {
 	font-family: "Candy Beans";
 	src: url("fonts/Candy Beans.otf");
@@ -8,14 +10,18 @@
 	src: url("fonts/Milky Coffee.otf");
 }
 
-h1 {
-	font-size: 48px;
-	font-weight: normal;
+* {
+	box-sizing: border-box;
 }
 
 body {
 	background-color: #202020;
 	margin: 0px;
+}
+
+h1 {
+	font-size: 48px;
+	font-weight: normal;
 }
 
 div.titleBackground {
@@ -50,9 +56,17 @@ div.titleText {
 div.page {
 	color: #d0d0d0;
 	font-size: 24px;
-	font-family: "Candy Beans";
+	font-family: "Patrick Hand";
 
 	padding-left: 32px;
+}
+
+div.pageTitle {
+	color: #d0d0d0;
+	font-size: 48px;
+	font-family: "Candy Beans";
+	margin-top: 16px;
+	margin-bottom: 16px;
 }
 
 div.pageRedirectContainer {
@@ -67,7 +81,7 @@ a.pageButton {
 	margin-left: 16px;
 	height: 64px;
 	font-size: 24px;
-	font-family: "Candy Beans";
+	font-family: "Patrick Hand";
 	text-decoration: none;
 }
 
@@ -76,6 +90,6 @@ a.pageRedirect {
 	margin-left: 16px;
 	height: 64px;
 	font-size: 24px;
-	font-family: "Candy Beans";
+	font-family: "Patrick Hand";
 	text-decoration: none;
 }
