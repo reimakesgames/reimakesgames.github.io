@@ -12,6 +12,11 @@ h1 {
 
 /* API Dump CSS (Version 1.10) */
 
+@font-face {
+	font-family: 'Cascadia';
+	src: url('/fonts/Cascadia.otf');
+}
+
 a {
 	color: #007FFF;
 }
@@ -20,7 +25,7 @@ body
 {
 	background-color: #151515;
 	color: white;
-	font-family: Courier New;
+	font-family: 'Cascadia', monospace;
 	white-space: nowrap;
 	padding: 20px;
 	padding-top: unset;
@@ -32,6 +37,7 @@ body
 
 h2
 {
+	padding-top: 32px;
 	margin-left: -12px;
 }
 
@@ -46,6 +52,33 @@ hr
 ::before
 {
 	font-weight: bold;
+}
+
+.ClientScript::before {
+	/* background: linear-gradient(to bottom right, rgb(52, 152, 219), rgb(32, 102, 148)); */
+	background: rgb(52, 152, 219);
+
+	border-radius: 4px;
+	content: "ClientScript";
+}
+.ServerScript::before {
+	/* background: linear-gradient(to bottom right, rgb(46, 204, 113), rgb(31, 139, 76)); */
+	background: rgb(46, 204, 113);
+
+	border-radius: 4px;
+	content: "ServerScript";
+}
+.ModuleScript::before {
+	/* background: linear-gradient(to bottom right, rgb(155, 89, 182), rgb(113, 54, 138)); */
+	background: rgb(155, 89, 182);
+
+	border-radius: 4px;
+	content: "ModuleScript";
+}
+
+.ClassType::before {
+	content: "type";
+	color: #00FFFF
 }
 
 .Class::before,
@@ -82,6 +115,12 @@ hr
 	color: #00FF00;
 }
 
+.Method::before
+{
+	content: "Method";
+	color: #00FF00;
+}
+
 .Event::before
 {
 	content: "Event";
@@ -92,6 +131,13 @@ hr
 {
 	content: "Callback";
 	color: #FF00FF;
+}
+
+div.VersionWrapper {
+	background: #101010;
+	border: 1px solid #202020;
+	border-radius: 8px;
+	padding: 16px;
 }
 
 div.Added::before
@@ -120,6 +166,14 @@ div.Renamed::before
 div.Merged::before
 {
 	content: "Merged";
+}
+
+div.Imported::before {
+	content: "Imported";
+	color: #FF7FFF;
+}
+div.Imported {
+	content: "Package";
 }
 
 div.Moved::before

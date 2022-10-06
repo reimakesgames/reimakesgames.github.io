@@ -7,17 +7,722 @@
 </head>
 	<body>
 		<hr>
-		<h1>Hybrid Theory Technical Changelogs</h1>
+		<h1>Hybrid Theory Technical API Changelogs</h1>
+		I AM ACTUALLY NOT DOING THIS FUCK OFF GO READ THE DIFFS
+		<br>or am i?
+		<br><a href="https://github.com/reimakesgames/hybrid-conflict/commits/main">https://github.com/reimakesgames/hybrid-conflict/commits/main</a>
 		<hr>
+		<!-- WOOO CONTENT -->
+		<!-- am i racist if i put a random slur here -->
+		<h2>[v0.0.9]</h2>
+		No notable changes in the API was done in this version
 		<h2>[v0.0.8.p1]</h2>
+		No notable changes in the API was done in this version
+		<h2>[v0.0.8]</h2>
+		<div class="VersionWrapper">
+			<div class="Changed">
+				<span class="WhatChanged">return value</span>
+				<span class="Method">
+					<span class="ClassName Function">Caster</span>
+					<span class="Name">FindThickness</span>
+					<span class="Parameters"></span>
+					<div class="ChangeFrom">
+						<span class="ChangeList">
+							<span class="Type">
+								number, Vector3?
+							</span>
+						</span>
+					</div>
+					<div class="ChangeTo">
+						<span class="ChangeList">
+							<span class="Type">
+								number, RaycastResult?
+							</span>
+						</span>
+					</div>
+				</span>
+			</div>
+			<br>
+			<div class="Added">
+				<span class="Function">
+					<span class="Type">void</span>
+					<span class="ClassName Function">ParticleEffects</span>
+					<span class="Name">NewBulletExit</span>
+					<span class="Parameters">
+						<span class="Parameter">
+							<span class="Type">Vector3</span>
+							<span class="Name">hitPosition</span>
+						</span>
+						<span class="Parameter">
+							<span class="Type">Vector3</span>
+							<span class="Name">hitNormal</span>
+						</span>
+						<span class="Parameter">
+							<span class="Type">BasePart</span>
+							<span class="Name">hitObject</span>
+						</span>
+						<span class="Parameter">
+							<span class="Type">Vector3</span>
+							<span class="Name">tracePath</span>
+						</span>
+					</span>
+				</span>
+			</div>
+		</div>
+		<h2>[v0.0.7.p1]</h2>
+		No notable changes in the API was done in this version
+		<h2>[v0.0.7]</h2>
+		<div class="VersionWrapper">
+			<div class="Added">
+				<span class="ClientScript">
+					<span class="Name">Changelogs</span>
+				</span>
+			</div>
+			<div class="Added">
+				<span class="ServerScript">
+					<span class="Name">Changelogs</span>
+				</span>
+			</div>
+			<div class="Added">
+				<span class="ModuleScript">
+					<span class="Name">GithubPuller</span>
+				</span>
+				<div class="Child Added">
+					<span class="Function">
+						<span class="Type">string</span>
+						<span class="ClassName Function">GithubPuller</span>
+						<span class="Name">GetFileAsync</span>
+						<span class="Parameters">
+							<span class="Parameter">
+								<span class="Type">string</span>
+								<span class="Name">link</span>
+							</span>
+							<span class="Parameter">
+								<span class="Type">number?</span>
+								<span class="Name">_depth</span>
+							</span>
+						</span>
+						<span class="Tag">[Yielding]</span>
+					</span>
+				</div>
+			</div>
+		</div>
+		<h2>everything past here is probably not properly documented</h2>
+		<h2>[v0.0.6]</h2>
+		<div class="VersionWrapper">
+			<!-- <div class="Changed">
+				<span class="WhatChanged">architecture</span>
+				<span class="Method">
+					<span class="ClassName Function">ParticleEffects</span>
+					<span class="Name">NewBulletHole</span>
+					<span class="Parameters"></span>
+					<div class="ChangeFrom">
+						<span class="ChangeList">
+							Part based
+						</span>
+					</div>
+					<div class="ChangeTo">
+						<span class="ChangeList">
+							Attachment based
+						</span>
+					</div>
+				</span>
+			</div>
+			<br> -->
+			<div class="Added">
+				<span class="ModuleScript">
+					<span class="Name">LerpTools</span>
+					<div class="Child Added">
+						<span class="Function">
+							<span class="Type">number</span>
+							<span class="ClassName Function">LerpTools</span>
+							<span class="Name">CreateFramerateIndependentAlpha</span>
+							<span class="Parameters">
+								<span class="Parameter">
+									<span class="Type">number</span>
+									<span class="Name">speed</span>
+								</span>
+							</span>
+						</span>
+					</div>
+					<div class="Child Added">
+						<span class="Function">
+							<span class="Type">number</span>
+							<span class="ClassName Function">LerpTools</span>
+							<span class="Name">LinearInterpolate</span>
+							<span class="Parameters">
+								<span class="Parameter">
+									<span class="Type">number</span>
+									<span class="Name">numberToInterpolate</span>
+								</span>
+								<span class="Parameter">
+									<span class="Type">number</span>
+									<span class="Name">target</span>
+								</span>
+								<span class="Parameter">
+									<span class="Type">number</span>
+									<span class="Name">speed</span>
+								</span>
+							</span>
+						</span>
+					</div>
+				</span>
+			</div>
+		</div>
+		<h2>[v0.0.5]</h2>
+		<div class="VersionWrapper">
+			<div class="Changed">
+				<span class="WhatChanged">name</span>
+				<span class="ModuleScript">
+					<span class="Name">CastEffects</span>
+				</span>
+				<div class="ChangeFrom">
+					<span class="ChangeList">
+						CastEffects
+					</span>
+				</div>
+				<div class="ChangeTo">
+					<span class="ChangeList">
+						ParticleEffects
+					</span>
+				</div>
+			</div>
+			<div class="Changed">
+				<span class="WhatChanged">type</span>
+				<span class="Property">
+					<span class="ClassName Property">Viewmodel</span>
+					<span class="Name">Springs</span>
+				</span>
+				<div class="ChangeFrom">
+					<span class="ChangeList">
+						Array&ltSpring&gt
+					</span>
+				</div>
+				<div class="ChangeTo">
+					<span class="ChangeList">
+						Dictionary&ltSpring&gt
+					</span>
+				</div>
+			</div>
+			<br>
+			<div class="Added">
+				<span class="ModuleScript">
+					<span class="Name">QuickInstance</span>
+					<div class="Child Added">
+						<span class="Function">
+							<span class="Type">Instance</span>
+							<span class="Name">QuickInstance</span>
+						</span>
+						<span class="Parameters">
+							<span class="Parameter">
+								<span class="Type">string</span>
+								<span class="Name">ClassName</span>
+							</span>
+							<span class="Parameter">
+								<span class="Type">Dictionary&ltany&gt</span>
+								<span class="Name">startCFrame</span>
+							</span>
+						</span>
+					</div>
+				</span>
+			</div>
+			<br>
+			<div class="Added">
+				<span class="Function">
+					<span class="Type">void</span>
+					<span class="ClassName Function">ParticleEffects</span>
+					<span class="Name">NewBulletShell</span>
+					<span class="Parameters">
+						<span class="Parameter">
+							<span class="Type">CFrame</span>
+							<span class="Name">startCFrame</span>
+						</span>
+					</span>
+				</span>
+			</div>
+		</div>
+		<h2>[v0.0.4]</h2>
+		<div class="VersionWrapper">
+			<div class="Added">
+				<span class="Class">
+					<span class="Name">Spring</span>
+					<div class="Child Added">
+						<span class="Method">
+							<span class="Type">void</span>
+							<span class="ClassName Function">Spring</span>
+							<span class="Name">ApplyForce</span>
+							<span class="Parameters">
+								<span class="Parameter">
+									<span class="Type">Vector3</span>
+									<span class="Name">force</span>
+								</span>
+							</span>
+						</span>
+					</div>
+					<div class="Child Added">
+						<span class="Method">
+							<span class="Type">Vector3</span>
+							<span class="ClassName Function">Spring</span>
+							<span class="Name">Step</span>
+							<span class="Parameters">
+								<span class="Parameter">
+									<span class="Type">number</span>
+									<span class="Name">deltaTime</span>
+								</span>
+							</span>
+						</span>
+					</div>
+					<div class="Child Added">
+						<span class="Property">
+							<span class="Type">Vector3</span>
+							<span class="ClassName Property">Spring</span>
+							<span class="Name">Target</span>
+						</span>
+					</div>
+					<div class="Child Added">
+						<span class="Property">
+							<span class="Type">Vector3</span>
+							<span class="ClassName Property">Spring</span>
+							<span class="Name">Position</span>
+						</span>
+					</div>
+					<div class="Child Added">
+						<span class="Property">
+							<span class="Type">Vector3</span>
+							<span class="ClassName Property">Spring</span>
+							<span class="Name">Velocity</span>
+						</span>
+					</div>
+					<div class="Child Added">
+						<span class="Property">
+							<span class="Type">number</span>
+							<span class="ClassName Property">Spring</span>
+							<span class="Name">Mass</span>
+						</span>
+					</div>
+					<div class="Child Added">
+						<span class="Property">
+							<span class="Type">number</span>
+							<span class="ClassName Property">Spring</span>
+							<span class="Name">Force</span>
+						</span>
+					</div>
+					<div class="Child Added">
+						<span class="Property">
+							<span class="Type">number</span>
+							<span class="ClassName Property">Spring</span>
+							<span class="Name">Damping</span>
+						</span>
+					</div>
+					<div class="Child Added">
+						<span class="Property">
+							<span class="Type">number</span>
+							<span class="ClassName Property">Spring</span>
+							<span class="Name">Speed</span>
+						</span>
+					</div>
+				</span>
+			</div>
+			<div class="Added">
+				<span class="Class">
+					<span class="Name">SoundSettings</span>
+					<div class="Child Added">
+						<span class="Property">
+							<span class="Type">bool | Vector3</span>
+							<span class="ClassName Property">SoundSettings</span>
+							<span class="Name">SoundPosition</span>
+						</span>
+					</div>
+					<div class="Child Added">
+						<span class="Property">
+							<span class="Type">Vector3?</span>
+							<span class="ClassName Property">SoundSettings</span>
+							<span class="Name">SoundSize</span>
+						</span>
+					</div>
+				</span>
+			</div>
+			<br>
+			<div class="Added">
+				<span class="ModuleScript">
+					<span class="Name">Spring</span>
+					<div class="Child Added">
+						<span class="Function">
+							<span class="Type">Spring</span>
+							<span class="ClassName Property">Spring</span>
+							<span class="Name">new</span>
+							<span class="Parameters">
+								<span class="Parameter">
+									<span class="Type">number</span>
+									<span class="Name">mass</span>
+								</span>
+								<span class="Parameter">
+									<span class="Type">number</span>
+									<span class="Name">force</span>
+								</span>
+								<span class="Parameter">
+									<span class="Type">number</span>
+									<span class="Name">damping</span>
+								</span>
+								<span class="Parameter">
+									<span class="Type">number</span>
+									<span class="Name">speed</span>
+								</span>
+							</span>
+						</span>
+					</div>
+				</span>
+			</div>
+			<div class="Added">
+				<span class="ModuleScript">
+					<span class="Name">SoundEffects</span>
+					<div class="Child Added">
+						<span class="Function">
+							<span class="Type">void</span>
+							<span class="ClassName Function">SoundEffects</span>
+							<span class="Name">PlaySound</span>
+							<span class="Parameters">
+								<span class="Parameter">
+									<span class="Type">Sound</span>
+									<span class="Name">soundObject</span>
+								</span>
+								<span class="Parameter">
+									<span class="Type">SoundSettings</span>
+									<span class="Name">soundSettings</span>
+								</span>
+							</span>
+						</span>
+					</div>
+				</span>
+			</div>
+			<br>
+			<div class="Added">
+				<span class="Method">
+					<span class="Type">void</span>
+					<span class="ClassName Function">Viewmodel</span>
+					<span class="Name">Decorate</span>
+					<span class="Parameters">
+						<span class="Parameter">
+							<span class="Type">Model</span>
+							<span class="Name">model</span>
+						</span>
+					</span>
+				</span>
+			</div>
+			<div class="Added">
+				<span class="Method">
+					<span class="Type">void</span>
+					<span class="ClassName Function">Viewmodel</span>
+					<span class="Name">Cleanup</span>
+					<span class="Parameters"></span>
+				</span>
+			</div>
+			<div class="Added">
+				<span class="Method">
+					<span class="Type">void</span>
+					<span class="ClassName Function">CastEffects</span>
+					<span class="Name">EmitParticlesFrom</span>
+					<span class="Parameters">
+						<span class="Parameter">
+							<span class="Type">Attachment</span>
+							<span class="Name">attachment</span>
+						</span>
+					</span>
+				</span>
+			</div>
+			<div class="Added">
+				<span class="Property">
+					<span class="Type">Model</span>
+					<span class="ClassName Property">Viewmodel</span>
+					<span class="Name">Decoration</span>
+				</span>
+			</div>
+			<div class="Added">
+				<span class="Property">
+					<span class="Type">Array&ltSpring&gt</span>
+					<span class="ClassName Property">Viewmodel</span>
+					<span class="Name">Springs</span>
+				</span>
+			</div>
+		</div>
+		<h2>[v0.0.3]</h2>
+		<div class="VersionWrapper">
+			<div class="Added">
+				<span class="ModuleScript">
+					<span class="Name">Viewmodel</span>
+					<div class="Child Added">
+						<span class="Function">
+							<span class="Type">Viewmodel</span>
+							<span class="ClassName Property">Viewmodel</span>
+							<span class="Name">new</span>
+							<span class="Parameters"></span>
+						</span>
+					</div>
+				</span>
+			</div>
+			<br>
+			<div class="Added">
+				<span class="Class">
+					<span class="Name">Viewmodel</span>
+					<div class="Child Added">
+						<span class="Method">
+							<span class="Type">void</span>
+							<span class="ClassName Function">Viewmodel</span>
+							<span class="Name">Cull</span>
+							<span class="Parameters">
+								<span class="Parameter">
+									<span class="Type">bool</span>
+									<span class="Name">enabled</span>
+								</span>
+							</span>
+						</span>
+					</div>
+					<div class="Child Added">
+						<span class="Method">
+							<span class="Type">void</span>
+							<span class="ClassName Function">Viewmodel</span>
+							<span class="Name">SetCFrame</span>
+							<span class="Parameters">
+								<span class="Parameter">
+									<span class="Type">CFrame</span>
+									<span class="Name">cframe</span>
+								</span>
+							</span>
+						</span>
+					</div>
+					<div class="Child Added">
+						<span class="Property">
+							<span class="Type">Model</span>
+							<span class="ClassName Property">Viewmodel</span>
+							<span class="Name">Model</span>
+						</span>
+					</div>
+					<div class="Child Added">
+						<span class="Property">
+							<span class="Type">bool</span>
+							<span class="ClassName Property">Viewmodel</span>
+							<span class="Name">Culled</span>
+						</span>
+					</div>
+				</span>
+			</div>
+			<br>
+			<div class="Added">
+				<span class="Function">
+					<span class="Type">void</span>
+					<span class="ClassName Function">CastEffects</span>
+					<span class="Name">NewBulletSmoke</span>
+					<span class="Parameters">
+						<span class="Parameter">
+							<span class="Type">Vector3</span>
+							<span class="Name">startPosition</span>
+						</span>
+						<span class="Parameter">
+							<span class="Type">Vector3</span>
+							<span class="Name">endPosition</span>
+						</span>
+					</span>
+				</span>
+			</div>
+		</div>
+		<h2>[v0.0.2]</h2>
+		<div class="VersionWrapper">
+			<div class="Imported">
+				<span class="Type">Package</span>
+				<span class="Name">"howmanysmall/janitor@1.14.1"</span>
+			</div>
+			<br>
+			<div class="Added">
+				<span class="ModuleScript">
+					<span class="Name">CastEffects</span>
+					<div class="Child Added">
+						<span class="Function">
+							<span class="Type">void</span>
+							<span class="ClassName Function">CastEffects</span>
+							<span class="Name">NewBulletHole</span>
+							<span class="Parameters">
+								<span class="Parameter">
+									<span class="Type">Vector3</span>
+									<span class="Name">hitPosition</span>
+								</span>
+								<span class="Parameter">
+									<span class="Type">Vector3</span>
+									<span class="Name">hitNormal</span>
+								</span>
+							</span>
+						</span>
+					</div>
+					<div class="Child Added">
+						<span class="Function">
+							<span class="Type">void</span>
+							<span class="ClassName Function">CastEffects</span>
+							<span class="Name">CreateFakeTracer</span>
+							<span class="Parameters">
+								<span class="Parameter">
+									<span class="Type">Vector3</span>
+									<span class="Name">StartPosition</span>
+								</span>
+								<span class="Parameter">
+									<span class="Type">Vector3</span>
+									<span class="Name">EndPosition</span>
+								</span>
+							</span>
+						</span>
+					</div>
+					<div class="Child Added">
+						<span class="Function">
+							<span class="Type">void</span>
+							<span class="ClassName Function">CastEffects</span>
+							<span class="Name">CreateRaycastDebug</span>
+							<span class="Parameters">
+								<span class="Parameter">
+									<span class="Type">Vector3</span>
+									<span class="Name">origin</span>
+								</span>
+								<span class="Parameter">
+									<span class="Type">Vector3</span>
+									<span class="Name">goal</span>
+								</span>
+							</span>
+						</span>
+					</div>
+				</span>
+			</div>
+		</div>
+		<h2>[v0.0.1]</h2>
+		<div class="VersionWrapper">
+			<div class="Imported">
+				<span class="Type">Package</span>
+				<span class="Name">"lucasmzreal/fastsignal@10.2.1"</span>
+			</div>
+			<div class="Imported">
+				<span class="Type">Package</span>
+				<span class="Name">"encodedvenom/fastcastredux@0.1.3"</span>
+			</div>
+			<div class="Imported">
+				<span class="Type">Package</span>
+				<span class="Name">"evaera/promise@4.0.0"</span>
+			</div>
+			<div class="Imported">
+				<span class="Type">Package</span>
+				<span class="Name">"reimakesgames/prisma@0.2.0"</span>
+			</div>
+			<div class="Imported">
+				<span class="Type">Package</span>
+				<span class="Name">"reimakesgames/link@0.2.1"</span>
+			</div>
+			<br>
+			<div class="Added">
+				<span class="ClientScript">
+					<span class="Name">Weapon</span>
+				</span>
+			</div>
+			<div class="Added">
+				<span class="ModuleScript">
+					<span class="Name">Caster</span>
+					<div class="Added Child">
+						<span class="Function">
+							<span class="Type">RaycastResult?</span>
+							<span class="ClassName Function">Caster</span>
+							<span class="Name">Cast</span>
+							<span class="Parameters">
+								<span class="Parameter">
+									<span class="Type">Vector3</span>
+									<span class="ParamName">startPosition</span>
+								</span>
+								<span class="Parameter">
+									<span class="Type">Vector3</span>
+									<span class="ParamName">endPosition</span>
+								</span>
+							</span>
+						</span>
+					</div>
+					<div class="Added Child">
+						<span class="Function">
+							<span class="Type">number?, Vector3?</span>
+							<span class="ClassName Function">Caster</span>
+							<span class="Name">FindThickness</span>
+							<span class="Parameters">
+								<span class="Parameter">
+									<span class="Type">Instance</span>
+									<span class="ParamName">object</span>
+								</span>
+								<span class="Parameter">
+									<span class="Type">Vector3</span>
+									<span class="ParamName">hitPosition</span>
+								</span>
+								<span class="Parameter">
+									<span class="Type">Vector3</span>
+									<span class="ParamName">startPosition</span>
+								</span>
+								<span class="Parameter">
+									<span class="Type">Vector3</span>
+									<span class="ParamName">endPosition</span>
+								</span>
+							</span>
+						</span>
+					</div>
+				</span>
+			</div>
+		</div>
+
+
+		<!-- aww bye content -->
+		<!-- FUCK OFF READING SOURCE CODE THIS IS FUCKING SPAGHETTI I WANT TO CRY -->
+		<hr>
+		<h2>[v0.0.0 NOT A REAL VERSION]</h2>
+		<div class="Added">
+			<span class="Class">
+				<span class="Name">WeaponCaster</span>
+				<span class="SuperClass">BaseService</span>
+			</span><br>
+			<div class="Added child">
+				<span class="Property">
+					<span class="Type">bool</span>
+					<span class="ClassName Property">WeaponCaster</span>
+					<span class="Name">WallbangingEnabled</span>
+				</span>
+			</div>
+			<div class="Added child">
+				<span class="Function">
+					<span class="Type">RaycastResult</span>
+					<span class="ClassName Function">WeaponCaster</span>
+					<span class="Name">Cast</span>
+					<span class="Parameters">
+						<span class="Parameter">
+							<span class="Type">Vector3</span>
+							<span class="ParamName">origin</span>
+						</span>
+						<span class="Parameter">
+							<span class="Type">Vector3</span>
+							<span class="ParamName">direction</span>
+						</span>
+					</span>
+				</span>
+			</div>
+		</div><br>
+		<div class="Changed">
+			<span class="WhatChanged">value</span>
+			<span class="Property">
+				<span class="ClassName Property">WeaponCaster</span>
+				<span class="Name">WallbangAmount</span>
+			</span>
+			<span class="ChangeFrom">
+				<span class="Int32">7</span>
+			</span>
+			<span class="ChangeTo">
+				<span class="Int32">4</span>
+			</span>
+		</div>
+
+		<h2>[v0.0.0 NOT A REAL VERSION]</h2>
 		<div class="Added">
 			<span class="Property">
 				<span class="Type">boolean</span>
 				<span class="ClassName Property">SomeService</span>
 				<span class="Name">EnableFarting</span>
 			</span>
-		</div>
-		<br>
+		</div><br>
 		<div class="Changed">
 			<span class="WhatChanged">value</span>
 			<span class="Property">
@@ -31,10 +736,5 @@
 				<span class="Int32">15</span>
 			</span>
 		</div>
-
-		<br>
-		I AM ACTUALLY NOT DOING THIS FUCK OFF GO READ THE DIFFS
-		<br>
-		<a href="https://github.com/reimakesgames/hybrid-conflict/commits/main">https://github.com/reimakesgames/hybrid-conflict/commits/main</a>
 	</body>
 </html>
