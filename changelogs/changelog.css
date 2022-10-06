@@ -31,7 +31,7 @@ body
 	padding-top: unset;
 	padding-bottom: unset;
 	margin-top: -20px;
-	transform: scale(1.5);
+	transform: scale(1);
 	transform-origin: 0 0;
 }
 
@@ -135,6 +135,7 @@ hr
 
 div.VersionWrapper {
 	background: #101010;
+	width: 100%;
 	border: 1px solid #202020;
 	border-radius: 8px;
 	padding: 16px;
