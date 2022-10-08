@@ -14,6 +14,410 @@
 		<hr>
 		<!-- WOOO CONTENT -->
 		<!-- am i racist if i put a random slur here -->
+		<h2>[v0.1.0]</h2>
+		<div class="VersionWrapper">
+			<div class="Renamed">
+				<span class="ClientScript">
+					Changelogs
+				</span>
+				<span class="to">
+					ChangelogsClient
+				</span>
+			</div>
+			<div class="Renamed">
+				<span class="ClientScript">
+					PrismaRunner
+				</span>
+				<span class="to">
+					PrismaClient
+				</span>
+			</div>
+			<div class="Renamed">
+				<span class="ClientScript">
+					Weapon
+				</span>
+				<span class="to">
+					WeaponClient
+				</span>
+			</div>
+			<div class="Renamed">
+				<span class="ServerScript">
+					Changelogs
+				</span>
+				<span class="to">
+					ChangelogsServer
+				</span>
+			</div>
+			<div class="Renamed">
+				<span class="ServerScript">
+					PrismaRunner
+				</span>
+				<span class="to">
+					PrismaServer
+				</span>
+			</div>
+			<div class="Renamed">
+				<span class="ServerScript">
+					Weapon
+				</span>
+				<span class="to">
+					WeaponServer
+				</span>
+			</div>
+			<div class="Renamed">
+				<span class="ModuleScript">
+					GithubPuller
+				</span>
+				<span class="to">
+					GithubHandler
+				</span>
+			</div>
+			<div class="Renamed">
+				<span class="ModuleScript">
+					SoundEffects
+				</span>
+				<span class="to">
+					SFXHandler
+				</span>
+			</div>
+			<div class="Renamed">
+				<span class="ModuleScript">
+					ParticleEffects
+				</span>
+				<span class="to">
+					VFXHandler
+				</span>
+			</div>
+			<div class="Renamed">
+				<span class="ModuleScript">
+					LerpTools
+				</span>
+				<span class="to">
+					LerpUtil
+				</span>
+			</div>
+			<div class="Renamed">
+				<span class="Function">
+					<span class="ClassName Function">VFXHandler</span>
+					<span class="Name">EmitParticlesFrom</span>
+					<span class="Parameters"></span>
+					<span class="to">
+						<span class="ClassName Function">VFXHandler</span>
+						<span class="Name">EmitMuzzleParticles</span>
+						<span class="Parameters"></span>
+					</span>
+				</span>
+			</div>
+			<div class="Renamed">
+				<span class="Function">
+					<span class="ClassName Function">VFXHandler</span>
+					<span class="Name">CreateFakeTracer</span>
+					<span class="Parameters"></span>
+					<span class="to">
+						<span class="ClassName Function">VFXHandler</span>
+						<span class="Name">NewTracer</span>
+						<span class="Parameters"></span>
+					</span>
+				</span>
+			</div>
+			<br>
+			<div class="Changed">
+				<span class="WhatChanged">name</span>
+				<span class="Type">Class</span>
+				<span class="Name">Spring</span>
+				<span class="To"> 
+					SpringClass
+				</span>
+			</div>
+			<div class="Changed">
+				<span class="WhatChanged">name</span>
+				<span class="Type">Class</span>
+				<span class="Name">Viewmodel</span>
+				<span class="To"> 
+					ViewmodelClass
+				</span>
+			</div>
+			<div class="Changed">
+				<span class="Property">
+					<span class="ClassName Property">ViewmodelClass</span>
+					<span class="Name">Springs</span>
+					<div class="ChangeFrom">
+						<span class="ChangeList">
+							<span class="Type">
+								Dictionary&ltSpring&gt
+							</span>
+						</span>
+					</div>
+					<div class="ChangeTo">
+						<span class="ChangeList">
+							<span class="Type">
+								Dictionary&ltSpringClass&gt
+							</span>
+						</span>
+					</div>
+				</span>
+			</div>
+			<div class="Changed">
+				<span class="WhatChanged">return value</span>
+				<span class="Function">
+					<span class="ClassName Property">Viewmodel</span>
+					<span class="Name">new</span>
+					<span class="Parameters"></span>
+					<div class="ChangeFrom">
+						<span class="ChangeList">
+							<span class="Type">
+								Viewmodel
+							</span>
+						</span>
+					</div>
+					<div class="ChangeTo">
+						<span class="ChangeList">
+							<span class="Type">
+								ViewmodelClass
+							</span>
+						</span>
+					</div>
+				</span>
+			</div>
+			<div class="Changed">
+				<span class="WhatChanged">parameters</span>
+				<span class="Function">
+					<span class="ClassName Function">SFXHandler</span>
+					<span class="Name">PlaySound</span>
+					<span class="Parameters"></span>
+					<div class="ChangeFrom">
+						<span class="ChangeList">
+							<span class="Type">Sound</span>
+							<span class="Name">soundObject</span>,
+							<span class="Type">SoundSettings</span>
+							<span class="Name">soundSettings</span>
+						</span>
+					</div>
+					<div class="ChangeTo">
+						<span class="ChangeList">
+							<span class="Type">Sound</span>
+							<span class="Name">soundObject</span>,
+							<span class="Type">SoundSettings?</span>
+							<span class="Name">soundSettings</span>
+						</span>
+					</div>
+				</span>
+			</div>
+			<div class="Changed">
+				<span class="WhatChanged">parameters</span>
+				<span class="Function">
+					<span class="ClassName Function">VFXHandler</span>
+					<span class="Name">NewBulletHole</span>
+					<span class="Parameters"></span>
+					<div class="ChangeFrom">
+						<span class="ChangeList">
+							<span class="Type">Vector3</span>
+							<span class="Name">hitPosition</span>,
+							<span class="Type">Vector3</span>
+							<span class="Name">hitNormal</span>,
+							<span class="Type">BasePart</span>
+							<span class="Name">hitObject</span>
+						</span>
+					</div>
+					<div class="ChangeTo">
+						<span class="ChangeList">
+							<span class="Type">Vector3</span>
+							<span class="Name">position</span>,
+							<span class="Type">Vector3</span>
+							<span class="Name">normal</span>,
+							<span class="Type">BasePart</span>
+							<span class="Name">object</span>
+						</span>
+					</div>
+				</span>
+			</div>
+			<div class="Changed">
+				<span class="WhatChanged">parameters</span>
+				<span class="Function">
+					<span class="ClassName Function">VFXHandler</span>
+					<span class="Name">NewBulletExit</span>
+					<span class="Parameters"></span>
+					<div class="ChangeFrom">
+						<span class="ChangeList">
+							<span class="Type">Vector3</span>
+							<span class="Name">hitPosition</span>,
+							<span class="Type">Vector3</span>
+							<span class="Name">hitNormal</span>,
+							<span class="Type">BasePart</span>
+							<span class="Name">hitObject</span>,
+							<span class="Type">Vector3</span>
+							<span class="Name">tracePath</span>
+						</span>
+					</div>
+					<div class="ChangeTo">
+						<span class="ChangeList">
+							<span class="Type">Vector3</span>
+							<span class="Name">position</span>,
+							<span class="Type">Vector3</span>
+							<span class="Name">normal</span>,
+							<span class="Type">BasePart</span>
+							<span class="Name">object</span>,
+							<span class="Type">Vector3</span>
+							<span class="Name">exitNormal</span>
+						</span>
+					</div>
+				</span>
+			</div>
+			<div class="Changed">
+				<span class="WhatChanged">parameters</span>
+				<span class="Function">
+					<span class="ClassName Function">VFXHandler</span>
+					<span class="Name">NewBulletSmoke</span>
+					<span class="Parameters"></span>
+					<div class="ChangeFrom">
+						<span class="ChangeList">
+							<span class="Type">Vector3</span>
+							<span class="Name">startPosition</span>,
+							<span class="Type">Vector3</span>
+							<span class="Name">endPosition</span>,
+						</span>
+					</div>
+					<div class="ChangeTo">
+						<span class="ChangeList">
+							<span class="Type">Vector3</span>
+							<span class="Name">position</span>,
+							<span class="Type">Vector3</span>
+							<span class="Name">goal</span>,
+						</span>
+					</div>
+				</span>
+			</div>
+			<div class="Changed">
+				<span class="WhatChanged">parameters</span>
+				<span class="Function">
+					<span class="ClassName Function">VFXHandler</span>
+					<span class="Name">NewBulletShell</span>
+					<span class="Parameters"></span>
+					<div class="ChangeFrom">
+						<span class="ChangeList">
+							<span class="Type">CFrame</span>
+							<span class="Name">startCFrame</span>
+						</span>
+					</div>
+					<div class="ChangeTo">
+						<span class="ChangeList">
+							<span class="Type">CFrame</span>
+							<span class="Name">originCFrame</span>
+						</span>
+					</div>
+				</span>
+			</div>
+			<div class="Changed">
+				<span class="WhatChanged">parameters</span>
+				<span class="Function">
+					<span class="ClassName Function">VFXHandler</span>
+					<span class="Name">NewTracer</span>
+					<span class="Parameters"></span>
+					<div class="ChangeFrom">
+						<span class="ChangeList">
+							<span class="Type">Vector3</span>
+							<span class="Name">StartPosition</span>,
+							<span class="Type">Vector3</span>
+							<span class="Name">EndPosition</span>
+						</span>
+					</div>
+					<div class="ChangeTo">
+						<span class="ChangeList">
+							<span class="Type">Vector3</span>
+							<span class="Name">origin</span>,
+							<span class="Type">Vector3</span>
+							<span class="Name">goal</span>
+						</span>
+					</div>
+				</span>
+			</div>
+			<div class="Changed">
+				<span class="WhatChanged">parameters</span>
+				<span class="Function">
+					<span class="ClassName Function">VFXHandler</span>
+					<span class="Name">__CreateRaycastDebug</span>
+					<span class="Parameters"></span>
+					<span class="Tag">[🔍 Hidden]</span>
+					<div class="ChangeFrom">
+						<span class="ChangeList">
+							<span class="Name">origin</span>,
+							<span class="Name">goal</span>
+						</span>
+					</div>
+					<div class="ChangeTo">
+						<span class="ChangeList">
+							<span class="Type">Vector3</span>
+							<span class="Name">origin</span>,
+							<span class="Type">Vector3</span>
+							<span class="Name">goal</span>
+						</span>
+					</div>
+				</span>
+			</div>
+			<br>
+			<div class="Added">
+				<span class="ModuleScript">
+					<span class="Name">RaycastHandler</span>
+					<div class="Added Child">
+						<span class="Function">
+							<span class="Type">RaycastResult?</span>
+							<span class="ClassName Function">RaycastHandler</span>
+							<span class="Name">Cast</span>
+							<span class="Parameters">
+								<span class="Parameter">
+									<span class="Type">Vector3</span>
+									<span class="ParamName">startPosition</span>
+								</span>
+								<span class="Parameter">
+									<span class="Type">Vector3</span>
+									<span class="ParamName">lookVector</span>
+								</span>
+								<span class="Parameter">
+									<span class="Type">number</span>
+									<span class="ParamName">distance</span>
+								</span>
+								<span class="Parameter">
+									<span class="Type">RaycastParams</span>
+									<span class="ParamName">parameter</span>
+								</span>
+							</span>
+						</span>
+					</div>
+					<div class="Added Child">
+						<span class="Function">
+							<span class="Type">RaycastResult?, number?</span>
+							<span class="ClassName Function">RaycastHandler</span>
+							<span class="Name">CheckHitDepth</span>
+							<span class="Parameters">
+								<span class="Parameter">
+									<span class="Type">Instance</span>
+									<span class="ParamName">object</span>
+								</span>
+								<span class="Parameter">
+									<span class="Type">Vector3</span>
+									<span class="ParamName">origin</span>
+								</span>
+								<span class="Parameter">
+									<span class="Type">Vector3</span>
+									<span class="ParamName">lookVector</span>
+								</span>
+							</span>
+						</span>
+					</div>
+				</span>
+			</div>
+			<br>
+			<div class="Removed">
+				<span class="ModuleScript">
+					Caster
+				</span>
+			</div>
+			<div class="Removed">
+				<span class="ModuleScript">
+					Caster
+				</span>
+			</div>
+		</div>
 		<h2>[v0.0.10.e]</h2>
 		<div class="VersionWrapper">
 			<div class="Added">

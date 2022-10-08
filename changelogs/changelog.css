@@ -54,6 +54,11 @@ hr
 	font-weight: bold;
 }
 
+.to::before {
+	color: #FFAA50;
+	content: "->";
+}
+
 .ClientScript::before {
 	/* background: linear-gradient(to bottom right, rgb(52, 152, 219), rgb(32, 102, 148)); */
 	background: rgb(52, 152, 219);
