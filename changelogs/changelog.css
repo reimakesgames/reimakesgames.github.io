@@ -182,6 +182,14 @@ div.Imported {
 	content: "Package";
 }
 
+div.Updated::before {
+	content: "Updated";
+	color: #7F7FFF;
+}
+div.Updated {
+	content: "Package";
+}
+
 div.Moved::before
 {
 	content: "Moved";
