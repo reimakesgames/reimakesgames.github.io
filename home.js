@@ -10,13 +10,20 @@ function NewElement(props, children) {
 	if (props.target) {
 		element.setAttribute('target', props.target)
 	}
+	if (props.backgroundimage) {
+		element.setAttribute('src', props.backgroundimage)
+	}
 	props.targetParent.appendChild(element)
-	if (children.length > 0) {
-		children.forEach((childProps, index) => {
-			childProps.targetParent = element
-			childProps.children = {}
-			NewElement(childProps, childProps.children)
-		});
+	if (children !== undefined || children !== null) {
+		if (children.length > 0) {
+			children.forEach((childProps, index) => {
+				if (!('children' in childProps)) {
+					childProps.children = []
+				}
+				childProps.targetParent = element
+				NewElement(childProps, childProps.children)
+			});
+		}
 	}
 	return element
 }
@@ -37,29 +44,46 @@ fetch('https://api.github.com/repos/reimakesgames/hybrid-conflict/issues')
 		targetClass: 'issuesContainer'
 	}, [])
 	data.forEach((result, index) => {
-		let obj = NewElement({
-			targetParent: issuesContainer,
-			targetTag: 'div',
-			targetClass: 'issueContainer',
-		}, [
-			{
-				targetTag: 'a',
-				targetClass: 'issueTitle',
-				targetText: result.title,
-				href: result.html_url,
-				target: '_blank'
-			},
-			{
-				targetTag: 'div',
-				targetClass: 'augmentedText',
-				targetText: '#' + result.number
-			},
-			{
+		let thing
+		if (result.body !== null) {
+			thing = {
 				targetTag: 'div',
 				targetClass: 'issueContent',
 				targetText: result.body
 			}
-		])
+		}
+		if (!result.pull_request) {
+			let obj = NewElement({
+				targetParent: issuesContainer,
+				targetTag: 'div',
+				targetClass: 'issueContainer',
+			}, [
+				{
+					targetTag: 'div',
+					targetClass: 'wrapper',
+					children: [
+						{
+							targetTag: 'img',
+							targetClass: 'profile',
+							backgroundimage: result.user.avatar_url,
+						},
+						{
+							targetTag: 'a',
+							targetClass: 'issueTitle',
+							targetText: result.title,
+							href: result.html_url,
+							target: '_blank'
+						},
+						{
+							targetTag: 'div',
+							targetClass: 'augmentedText',
+							targetText: '#' + result.number
+						}
+					],
+				},
+				thing
+			])
+		}
 	});
 })
 
@@ -79,28 +103,46 @@ fetch('https://api.github.com/repos/reimakesgames/hybrid-conflict/pulls')
 		targetClass: 'issuesContainer'
 	}, [])
 	data.forEach((result, index) => {
-		let obj = NewElement({
-			targetParent: issuesContainer,
-			targetTag: 'div',
-			targetClass: 'issueContainer',
-		}, [
-			{
-				targetTag: 'a',
-				targetClass: 'issueTitle',
-				targetText: result.title,
-				href: result.html_url,
-				target: '_blank'
-			},
-			{
-				targetTag: 'div',
-				targetClass: 'augmentedText',
-				targetText: '#' + result.number
-			},
-			{
+		let thing
+		if (result.body !== null) {
+			thing = {
 				targetTag: 'div',
 				targetClass: 'issueContent',
 				targetText: result.body
 			}
-		])
+		}
+		if (result.pull_request !== null) {
+			console.log(result.user.avatar_url)
+			let obj = NewElement({
+				targetParent: issuesContainer,
+				targetTag: 'div',
+				targetClass: 'issueContainer',
+			}, [
+				{
+					targetTag: 'div',
+					targetClass: 'wrapper',
+					children: [
+						{
+							targetTag: 'img',
+							targetClass: 'profile',
+							backgroundimage: result.user.avatar_url,
+						},
+						{
+							targetTag: 'a',
+							targetClass: 'issueTitle',
+							targetText: result.title,
+							href: result.html_url,
+							target: '_blank'
+						},
+						{
+							targetTag: 'div',
+							targetClass: 'augmentedText',
+							targetText: '#' + result.number
+						}
+					],
+				},
+				thing
+			])
+		}
 	});
 })
