@@ -63,7 +63,7 @@ fetch('https://api.github.com/repos/reimakesgames/hybrid-conflict/issues')
 	});
 })
 
-fetch('https://api.github.com/repos/reimakesgames/hybrid-conflict/issues')
+fetch('https://api.github.com/repos/reimakesgames/hybrid-conflict/pulls')
 .then((response) => response.json())
 .then((data) => {
 	console.log(data)
