@@ -1,0 +1,31 @@
+@font-face {
+	font-family: CascadiaCode;
+	src: url("/fonts/Cascadia.otf");
+}
+
+:root {
+	--background: rgb(16, 16, 24);
+	--menu: rgb(32, 32, 48);
+	--subMenu: rgb(64, 64, 96);
+
+	--lightMenu: rgb(240, 240, 240);
+
+	--primaryText: #E0E0E0;
+	--secondaryText: #C0C0C0;
+	--tertiaryText: #808080;
+
+	--selectedText: rgb(64, 64, 64);
+	--disabledText: rgb(32, 32, 32);
+	--disabledButton: rgb(24, 24, 24);
+}
+
+body {
+	background-color: var(--background);
+	color: var(--primaryText);
+	font-family: CascadiaCode, 'Courier New', Courier, monospace;
+
+	padding: 0;
+	margin: 0;
+
+	perspective: 24px;
+}

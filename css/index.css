@@ -1,0 +1,162 @@
+@import 'style.css';
+
+#menu {
+	align-items: center;
+	display: flex;
+	height: 100vh;
+	width: 100vw;
+}
+
+#menu-items {
+	margin-left: clamp(2rem, 10vw, 8rem);
+	position: relative;
+	height: auto;
+	z-index: 2;
+}
+
+#menu-background-pattern {
+	background-image: url('https://cdn.discordapp.com/attachments/842029814789177375/1033575716652060764/thingery_2.png');
+	background-position: 0% 0%;
+	background-size: 24vmin 24vmin;
+	opacity: 0.125;
+	height: 100vh;
+	left: 0px;
+	position: absolute;
+	top: 0px;
+	transition: opacity 0.75s ease,
+		background-size 0.75s ease,
+		background-position 0.75s ease;
+	width: 100vw;
+	z-index: 1;
+}
+
+#menu-background-image {
+	filter: blur(8px);
+	background-image: url("https://media.discordapp.net/attachments/842029814789177375/1033568323687940166/20221006_174716.jpg?width=1213&height=910");
+	background-position: center 40%;
+	background-size: 110vmax;
+	height: 100%;
+	left: 0px;
+	opacity: 0.15;
+	position: absolute;
+	top: 0px;
+	transition: opacity 1s ease,
+		background-size 1s ease,
+		background-position 1s ease;
+	width: 100%;
+	z-index: 0;
+}
+
+#menu-items:hover~#menu-background-pattern {
+	background-size: 20vmin 20vmin;
+	opacity: 0.25;
+}
+
+#menu-items:hover~#menu-background-image {
+	background-size: 100vmax;
+	opacity: 0.1;
+}
+
+#menu-items:hover>.menu-item {
+	transition: all 200ms ease;
+	opacity: 0.25;
+}
+
+#menu-items:hover>:not(#disabled).menu-item:hover {
+	color: var(--menu);
+	background-color: var(--lightMenu);
+	transition: all 0.1s ease;
+	opacity: 1;
+}
+
+#menu-items:hover>#disabled.menu-item:hover {
+	color: var(--tertiaryText);
+	background-color: var(--disabledButton);
+	transition: all 0.1s ease;
+	opacity: 1;
+}
+
+#menu-items:hover>.menu-item:active {
+	color: var(--selectedText);
+	transition: none;
+}
+
+#disabled {
+	background-color: var(--disabledButton);
+	color: var(--disabledText);
+}
+
+.menu-item {
+	color: var(--primaryText);
+	background-color: var(--menu);
+	cursor: pointer;
+	display: block;
+	font-family: 'Cascadia Code', Courier, monospace;
+	font-size: clamp(1rem, 8vw, 8rem);
+	/* padding: clamp(0.25rem, 0.25vw, 0.5rem) 0rem; */
+	margin: 0.25ch;
+	padding-top: 0.25ch;
+	padding-bottom: 0.25ch;
+	padding-left: 1ch;
+	padding-right: 1ch;
+	text-decoration: none;
+	transition: opacity 200ms ease;
+}
+
+#menu[data-active-index="0"]>#menu-background-pattern {
+	background-position: 0% -25%;
+}
+
+#menu[data-active-index="1"]>#menu-background-pattern {
+	background-position: 0% -50%;
+}
+
+#menu[data-active-index="2"]>#menu-background-pattern {
+	background-position: 0% -75%;
+}
+
+#menu[data-active-index="3"]>#menu-background-pattern {
+	background-position: 0% -100%;
+}
+
+#menu[data-active-index="0"]>#menu-background-image {
+	background-position: center 40%;
+}
+
+#menu[data-active-index="1"]>#menu-background-image {
+	background-position: center 50%;
+}
+
+#menu[data-active-index="2"]>#menu-background-image {
+	background-position: center 60%;
+}
+
+#menu[data-active-index="3"]>#menu-background-image {
+	background-position: center 70%;
+}
+
+#description {
+	white-space: pre-line;
+	background-color: var(--menu);
+	height: clamp(5rem, 50vw, 42rem);
+	font-size: clamp(1rem, 2vw, 2rem);
+	font-family: CascadiaCode, 'Courier New', Courier, monospace;
+	margin-left: 7vw;
+	padding: 5vh;
+	width: 40vw;
+	z-index: 4;
+	transition: all 0.5s ease;
+}
+
+/* #description[opacity='0'] {
+	opacity: 0
+} */
+#description[opacity='1'] {
+	opacity: 1
+}
+
+h1 {
+	font-size: clamp(1rem, 4vw, 4rem);
+	margin: 0;
+	padding: 0;
+}
