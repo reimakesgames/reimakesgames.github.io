@@ -1,6 +1,9 @@
 function NewElement(props, children) {
 	let element = document.createElement(props.targetTag)
 	element.textContent = props.targetText
+	if (props.ad) {
+		element.setAttribute('style', `animation-delay: ${props.ad}s;`)
+	}
 	if (props.targetClass) {
 		element.classList.add(props.targetClass)
 	}
@@ -50,6 +53,7 @@ setTimeout(() => {
 			targetTag: 'div',
 			targetClass: 'issuesContainer'
 		}, [])
+		let curr = 0
 		data.forEach((result, index) => {
 			let thing
 			let tags = []
@@ -71,10 +75,13 @@ setTimeout(() => {
 				});
 			}
 			if (!result.pull_request) {
+				curr = curr + 1
+				console.log(curr * 0.5);
 				let obj = NewElement({
 					targetParent: issuesContainer,
 					targetTag: 'div',
 					targetClass: 'issueContainer',
+					ad: curr * 0.1,
 				}, [
 					{
 						targetTag: 'div',

@@ -9,6 +9,17 @@
 	--primaryText: #E0E0E8;
 }
 
+@keyframes transparency {
+	0% {
+		opacity: 1;
+		scale: 1;
+	}
+	100% {
+		opacity: 0;
+		scale: 0.9;
+	}
+}
+
 body {
 	background-color: var(--background);
 	color: var(--primaryText);
@@ -43,7 +54,18 @@ div.issueContainer {
 	width: auto;
 	height: auto;
 	transition: all 0.1s;
-	border: 1px solid #404040
+	border: 1px solid #404040;
+	opacity: 0;
+
+	/* animation-delay: 5s; */
+	animation-name: transparency;
+	animation-duration: 0.2s;
+	animation-direction: reverse;
+	animation-iteration-count: 1;
+	animation-delay: attr(the);
+	animation-fill-mode: forwards;
+	/* -webkit-animation-delay: attr(--ad); */
+	/* animation: transparency 0.2s linear 1; */
 }
 
 div.issueContainer:hover {
