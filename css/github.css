@@ -64,12 +64,15 @@ span.issuesContainer .issueContainer:nth-child(even) {
 	background-color: #1a1a23;
 }
 
+span.issuesContainer .issueContainer:hover {
+	background-color: hsl(240, 20%, 10%);
+}
+
 div.issueContainer {
 	display: flexbox;
 	z-index: 1;
 	padding: 2ch;
 	background-color: #181820;
-	transition: all 0.1s;
 	border-bottom: 1px solid #404040;
 	border-left: 1px solid #404040;
 	border-right: 1px solid #404040;
@@ -81,14 +84,6 @@ div.issueContainer {
 	animation-iteration-count: 1;
 	animation-delay: attr(the);
 	animation-fill-mode: forwards;
-}
-
-div.issueContainer:hover {
-	z-index: 5;
-	scale: 1.01;
-	/* transform: rotateX(5deg); */
-	/* rotate: 15deg; */
-	box-shadow: 0px 0px 64px #00000080;
 }
 
 div.issueContainer div.wrapper {
