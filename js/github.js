@@ -37,22 +37,31 @@ function NewElement(props, children) {
 	}
 	return element
 }
+let bruh = NewElement({
+	targetParent: document.body,
+	targetTag: 'div',
+	targetClass: 'column2',
+}, [])
 setTimeout(() => {
+	let wrapperIssues = NewElement({
+		targetParent: bruh,
+		targetTag: 'div',
+	}, [])
+	NewElement({
+		targetParent: wrapperIssues,
+		targetTag: 'div',
+		targetClass: 'sectionTitles',
+		targetText: 'Issues'
+	}, [])
+	let IssuesContainer = NewElement({
+		targetParent: wrapperIssues,
+		targetTag: 'span',
+		targetClass: 'issuesContainer'
+	}, [])
 	fetch('https://api.github.com/repos/reimakesgames/hybrid-conflict/issues')
 	.then((response) => response.json())
 	.then((data) => {
 		console.log(data)
-		NewElement({
-			targetParent: document.body,
-			targetTag: 'div',
-			targetClass: 'sectionTitles',
-			targetText: 'Issues'
-		}, [])
-		let issuesContainer = NewElement({
-			targetParent: document.body,
-			targetTag: 'div',
-			targetClass: 'issuesContainer'
-		}, [])
 		let curr = 0
 		data.forEach((result, index) => {
 			let thing
@@ -77,10 +86,10 @@ setTimeout(() => {
 			if (!result.pull_request) {
 				curr = curr + 1
 				let obj = NewElement({
-					targetParent: issuesContainer,
+					targetParent: IssuesContainer,
 					targetTag: 'div',
 					targetClass: 'issueContainer',
-					ad: curr * 0.05,
+					ad: curr * 0.01,
 				}, [
 					{
 						targetTag: 'div',
@@ -110,23 +119,54 @@ setTimeout(() => {
 				])
 			}
 		});
+		if (data.length === 0) {
+			NewElement({
+				targetParent: IssuesContainer,
+				targetTag: 'div',
+				targetClass: 'issueContainer',
+				ad: curr * 0.01,
+			}, [
+				{
+					targetTag: 'div',
+					targetClass: 'nothing',
+					targetText: 'There are no active Issues',
+				},
+			])
+		}
+	})
+	.catch(function(e) {
+		NewElement({
+			targetParent: IssuesContainer,
+			targetTag: 'div',
+			targetClass: 'issueContainer',
+		}, [
+			{
+				targetTag: 'div',
+				targetClass: 'nothing',
+				targetText: e
+			},
+		])
 	})
 
+	let wrapperPulls = NewElement({
+		targetParent: bruh,
+		targetTag: 'div',
+	}, [])
+	NewElement({
+		targetParent: wrapperPulls,
+		targetTag: 'div',
+		targetClass: 'sectionTitles',
+		targetText: 'Pull Requests'
+	}, [])
+	let PullsContainer = NewElement({
+		targetParent: wrapperPulls,
+		targetTag: 'span',
+		targetClass: 'issuesContainer'
+	}, [])
 	fetch('https://api.github.com/repos/reimakesgames/hybrid-conflict/pulls')
 	.then((response) => response.json())
 	.then((data) => {
 		console.log(data)
-		NewElement({
-			targetParent: document.body,
-			targetTag: 'div',
-			targetClass: 'sectionTitles',
-			targetText: 'Pull Requests'
-		}, [])
-		let issuesContainer = NewElement({
-			targetParent: document.body,
-			targetTag: 'div',
-			targetClass: 'issuesContainer'
-		}, [])
 		let curr = 0
 		data.forEach((result, index) => {
 			let thing
@@ -149,11 +189,12 @@ setTimeout(() => {
 				});
 			}
 			if (result.pull_request !== null) {
+				curr = curr + 1
 				let obj = NewElement({
-					targetParent: issuesContainer,
+					targetParent: PullsContainer,
 					targetTag: 'div',
 					targetClass: 'issueContainer',
-					ad: curr * 0.05,
+					ad: curr * 0.01,
 				}, [
 					{
 						targetTag: 'div',
@@ -183,5 +224,33 @@ setTimeout(() => {
 				])
 			}
 		});
+		if (data.length === 0) {
+			NewElement({
+				targetParent: PullsContainer,
+				targetTag: 'div',
+				targetClass: 'issueContainer',
+				ad: curr * 0.01,
+			}, [
+				{
+					targetTag: 'div',
+					targetClass: 'nothing',
+					targetText: 'There are no active Pull Requests'
+				},
+			])
+		}
+	})
+	.catch(function(e) {
+		NewElement({
+			targetParent: PullsContainer,
+			targetTag: 'div',
+			targetClass: 'issueContainer',
+			ad: 0,
+		}, [
+			{
+				targetTag: 'div',
+				targetClass: 'nothing',
+				targetText: e
+			},
+		])
 	})
 }, 200)
