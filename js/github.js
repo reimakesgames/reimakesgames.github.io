@@ -123,12 +123,23 @@ setTimeout(() => {
 		}, [])
 		data.forEach((result, index) => {
 			let thing
+			let tags = []
 			if (result.body !== null) {
 				thing = {
 					targetTag: 'div',
 					targetClass: 'issueContent',
 					targetText: result.body
 				}
+			}
+			if (result.labels.length >= 0) {
+				result.labels.forEach((res, ind) => {
+					tags.splice(tags.length - 1, 0, {
+						targetTag: 'span',
+						targetClass: 'tag',
+						targetText: res.name,
+						backgroundcolor: '#'+res.color
+					})
+				});
 			}
 			if (result.pull_request !== null) {
 				console.log(result.user.avatar_url)
@@ -157,7 +168,8 @@ setTimeout(() => {
 								targetTag: 'div',
 								targetClass: 'augmentedText',
 								targetText: '#' + result.number
-							}
+							},
+							...tags
 						],
 					},
 					thing
