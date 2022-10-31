@@ -76,12 +76,11 @@ setTimeout(() => {
 			}
 			if (!result.pull_request) {
 				curr = curr + 1
-				console.log(curr * 0.5);
 				let obj = NewElement({
 					targetParent: issuesContainer,
 					targetTag: 'div',
 					targetClass: 'issueContainer',
-					ad: curr * 0.1,
+					ad: curr * 0.05,
 				}, [
 					{
 						targetTag: 'div',
@@ -128,6 +127,7 @@ setTimeout(() => {
 			targetTag: 'div',
 			targetClass: 'issuesContainer'
 		}, [])
+		let curr = 0
 		data.forEach((result, index) => {
 			let thing
 			let tags = []
@@ -149,11 +149,11 @@ setTimeout(() => {
 				});
 			}
 			if (result.pull_request !== null) {
-				console.log(result.user.avatar_url)
 				let obj = NewElement({
 					targetParent: issuesContainer,
 					targetTag: 'div',
 					targetClass: 'issueContainer',
+					ad: curr * 0.05,
 				}, [
 					{
 						targetTag: 'div',
