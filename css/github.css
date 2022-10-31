@@ -31,7 +31,7 @@ div.issuesContainer {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	gap: 12px;
+	gap: 1ch;
 }
 
 div.issueContainer {
@@ -76,18 +76,34 @@ div.issueContainer div.wrapper div.augmentedText  {
 	color: #808080;
 }
 
-div.issueContainer div.issueContent {
-	white-space: pre-wrap;
-	padding-top: 1ch;
-	font-size: 16px;
-	font-weight: 400;
-}
-
 div.issueContainer div.wrapper img.profile {
 	width: 4ch;
 	height: 4ch;
 	margin-right: 2ch;
 	object-fit: cover;
 	background-repeat: no-repeat;
-	border-radius: 0%;
+	border-radius: 25%;
+}
+
+div.issueContainer div.wrapper .tag {
+	padding-top: 0.25ch;
+	padding-bottom: 0.25ch;
+	padding-left: 1ch;
+	padding-right: 1ch;
+	margin-left: 1ch;
+	border-radius: 0.5ch;
+	color: #FFFFFF;
+	font-weight: 800;
+	mix-blend-mode: difference;
+}
+
+div.issueContainer div.issueContent {
+	white-space: pre-wrap;
+	padding-top: 1ch;
+	font-size: 16px;
+	font-weight: 400;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
 }
