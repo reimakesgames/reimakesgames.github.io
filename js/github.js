@@ -42,9 +42,106 @@ let bruh = NewElement({
 	targetTag: 'div',
 	targetClass: 'column2',
 }, [])
+let bruh2 = NewElement({
+	targetParent: bruh,
+	targetTag: 'div',
+	targetClass: 'column2',
+}, [])
 setTimeout(() => {
-	let wrapperIssues = NewElement({
+	let wrapperBranches = NewElement({
 		targetParent: bruh,
+		targetTag: 'div',
+	}, [])
+	NewElement({
+		targetParent: wrapperBranches,
+		targetTag: 'div',
+		targetClass: 'sectionTitles',
+		targetText: 'Branches'
+	}, [])
+	let branchesContainer = NewElement({
+		targetParent: wrapperBranches,
+		targetTag: 'span',
+		targetClass: 'issuesContainer'
+	}, [])
+	fetch('https://api.github.com/repos/reimakesgames/hybrid-conflict/branches')
+	.then((response) => response.json())
+	.then((data) => {
+		console.log(data)
+		let curr = 0
+		data.forEach((result, index) => {
+			let protected = result.protected
+			let prot
+			let col
+			if (protected) {
+				prot = {
+					targetTag: 'img',
+					targetClass: 'profile',
+					backgroundimage: "https://png.pngtree.com/element_our/20190528/ourmid/pngtree-black-and-white-shield-icon-image_1128462.jpg",
+				}
+			}
+			if (result.name == "main") {
+				col = "#3498db"
+			} else if (result.name == "working") {
+				col = "#e67e22"
+			}
+			NewElement({
+				targetParent: branchesContainer,
+				targetTag: 'div',
+				targetClass: 'issueContainer',
+				ad: curr * 0.01,
+				backgroundcolor: col,
+			}, [
+				{
+					targetTag: 'div',
+					targetClass: 'wrapper',
+					children: [
+						prot,
+						{
+							targetTag: 'a',
+							targetClass: 'issueTitle',
+							targetText: result.name,
+							href: "https://github.com/reimakesgames/hybrid-conflict/commits/" + result.name,
+							target: '_blank'
+						},
+						{
+							targetTag: 'div',
+							targetClass: 'augmentedText',
+							targetText: (result.commit.sha).substring(0, 7)
+						}
+					],
+				}
+			])
+		})
+		if (data.length === 0) {
+			NewElement({
+				targetParent: branchesContainer,
+				targetTag: 'div',
+				targetClass: 'issueContainer',
+				ad: curr * 0.01,
+			}, [
+				{
+					targetTag: 'div',
+					targetClass: 'nothing',
+					targetText: 'There are no branches somehow...',
+				},
+			])
+		}
+	})
+	.catch(function(e) {
+		NewElement({
+			targetParent: branchesContainer,
+			targetTag: 'div',
+			targetClass: 'issueContainer',
+		}, [
+			{
+				targetTag: 'div',
+				targetClass: 'nothing',
+				targetText: e
+			},
+		])
+	})
+	let wrapperIssues = NewElement({
+		targetParent: bruh2,
 		targetTag: 'div',
 	}, [])
 	NewElement({
@@ -149,7 +246,7 @@ setTimeout(() => {
 	})
 
 	let wrapperPulls = NewElement({
-		targetParent: bruh,
+		targetParent: bruh2,
 		targetTag: 'div',
 	}, [])
 	NewElement({

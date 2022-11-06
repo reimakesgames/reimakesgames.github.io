@@ -28,6 +28,8 @@ body {
 	padding: 0;
 	margin: 0;
 
+	overflow-x: none;
+
 	perspective: 24px;
 }
 
@@ -46,7 +48,7 @@ span.issuesContainer {
 	margin: 1vw;
 	display: flex;
 	flex-direction: column;
-	width: 48vw;
+	width: 31vw;
 	/* align-items: flex-start; */
 	/* gap: 1ch; */
 }
