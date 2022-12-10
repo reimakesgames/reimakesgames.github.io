@@ -1,0 +1,266 @@
+/* import Candy Beans font from fonts/ */
+@font-face {
+	font-family: 'Candy Beans';
+	src: url('../fonts/Candy Beans.otf');
+}
+
+::-webkit-scrollbar {
+	width: 0px;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	/* smooth scrolling */
+	scroll-behavior: smooth;
+	background-color: #FFEEFF;
+	font-family: 'Candy Beans';
+}
+
+.titleBackground {
+    background: url(../banner.png) no-repeat center center fixed;
+    background-size: cover;
+	height: 50vh;
+	margin: 0;
+	padding: 0;
+	/* add internal shadow at the bottom side */
+	box-shadow: inset 0 0 64px 5px rgba(0, 0, 0, 0.5);
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-attachment: fixed;
+	background-position: 50% -25vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	z-index: 1;
+}
+
+.footer {
+	background-color: #202020;
+	height: 40vh;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	z-index: 1;
+
+	/* center text */
+	text-align: center;
+	/* center text again */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #444444;
+	font-size: 1em;
+}
+
+/* profile icon centered horizontally */
+
+.profileIcon {
+	background: url(../me.png) no-repeat center center fixed;
+	background-size: cover;
+	position: absolute;
+	height: 200px;
+	width: 200px;
+	left: 50%;
+	top: 50%;
+	border-radius: 50%;
+	/* add shadow */
+	box-shadow: 0 0 16px 5px rgba(0, 0, 0, 0.5);
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	z-index: 2;
+}
+
+.profileName {
+	position: absolute;
+	margin-top: 150px;
+	color: #333333;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	z-index: 3;
+	font-size: 2.5em;
+}
+
+.profileDescription {
+	position: absolute;
+	margin-top: 200px;
+	color: #333333;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	z-index: 3;
+	font-size: 1.5em;
+}
+
+.projects {
+	padding-top: 500px;
+	padding-left: 20vw
+}
+
+.projects .project {
+	padding: 16px;
+	margin: 32px;
+	margin-bottom: 64px;
+}
+
+.projects .project .projectName {
+	font-size: 5em;
+	color: #333333;
+}
+
+.projects .project .projectDescription {
+	font-size: 2em;
+	color: #444444;
+}
+
+.socialsWrapper {
+	position: relative;
+	height: 100px;
+	width: 100px;
+	margin: 0;
+	padding: 0;
+}
+
+.githubRedirectSideText {
+	position: absolute;
+	width: 10em;
+	top: 50%;
+	transform: translate(37.5%, -62.5%);
+	z-index: 3;
+	font-size: 1.5em;
+	color: #333333;
+}
+
+.githubRedirect {
+	background-image: url(../github-mark.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 100px;
+	width: 100px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.githubRedirect:hover {
+	background-size: 110%;
+}
+
+
+.patreonRedirectSideText {
+	position: absolute;
+	width: 10em;
+	top: 50%;
+	transform: translate(37.5%, -62.5%);
+	z-index: 3;
+	font-size: 1.5em;
+	color: #333333;
+}
+
+.patreonRedirect {
+	background-image: url(../patreon.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 100px;
+	width: 100px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.patreonRedirect:hover {
+	background-size: 110%;
+}
+
+.youtubeRedirectSideText {
+	position: absolute;
+	width: 10em;
+	top: 50%;
+	transform: translate(37.5%, -62.5%);
+	z-index: 3;
+	font-size: 1.5em;
+	color: #333333;
+}
+
+.youtubeRedirect {
+	background-image: url(../youtube.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	height: 100px;
+	width: 100px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.youtubeRedirect:hover {
+	background-size: 110%;
+}
+
+.twitterRedirectSideText {
+	position: absolute;
+	width: 10em;
+	top: 50%;
+	transform: translate(37.5%, -62.5%);
+	z-index: 3;
+	font-size: 1.5em;
+	color: #333333;
+}
+
+.twitterRedirect {
+	background-image: url(../twitter.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	height: 100px;
+	width: 100px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.twitterRedirect:hover {
+	background-size: 110%;
+}
+
+.bio {
+	padding-top: 500px;
+	padding-left: 15vw;
+	white-space: pre-wrap;
+}
+
+.bio .paragraph {
+	padding: 16px;
+	margin: 32px;
+	margin-bottom: 64px;
+	font-size: 2em;
+	color: #333333;
+}
+
+.bio .paragraph:nth-child(odd) {
+	padding-left: 10vw;
+}
+
+.bio .paragraph:nth-child(even) {
+	padding-left: 15vw;
+}
